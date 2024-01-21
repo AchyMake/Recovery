@@ -1,0 +1,19 @@
+name: Recovery
+version: '${project.version}'
+main: org.achymake.recovery.Recovery
+api-version: '1.20'
+prefix: '${project.name}'
+load: POSTWORLD
+author: AchyMake
+description: '${project.description}'
+commands:
+  recovery:
+    description: commands
+    permission: recovery.command.reload
+permissions:
+  recovery.command.reload:
+    description: command reload
+    default: op
+  recovery.event.death:
+    description: recovers items to armor stand
+    default: op
