@@ -1,4 +1,4 @@
-package org.achymake.recovery.files;
+package org.achymake.recovery.data;
 
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -9,11 +9,7 @@ import org.bukkit.entity.Player;
 
 import java.util.logging.Level;
 
-public class Message {
-    private final Recovery plugin;
-    public Message(Recovery plugin) {
-        this.plugin = plugin;
-    }
+public record Message(Recovery plugin) {
     public void send(ConsoleCommandSender sender, String message) {
         sender.sendMessage(message);
     }

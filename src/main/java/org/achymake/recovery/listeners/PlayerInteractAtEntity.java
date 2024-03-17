@@ -1,7 +1,7 @@
 package org.achymake.recovery.listeners;
 
 import org.achymake.recovery.Recovery;
-import org.achymake.recovery.files.Database;
+import org.achymake.recovery.data.Database;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -9,14 +9,9 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 
-public class PlayerInteractAtEntity implements Listener {
-    private final Recovery plugin;
+public record PlayerInteractAtEntity(Recovery plugin) implements Listener {
     private Database getDatabase() {
         return plugin.getDatabase();
-    }
-    public PlayerInteractAtEntity(Recovery plugin) {
-        plugin.getServer().getPluginManager().registerEvents(this, plugin);
-        this.plugin = plugin;
     }
     @EventHandler(priority = EventPriority.NORMAL)
     public void onPlayerInteractAtEntity(PlayerInteractAtEntityEvent event) {

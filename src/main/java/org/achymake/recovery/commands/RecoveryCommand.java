@@ -1,7 +1,7 @@
 package org.achymake.recovery.commands;
 
 import org.achymake.recovery.Recovery;
-import org.achymake.recovery.files.Message;
+import org.achymake.recovery.data.Message;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 

@@ -1,7 +1,7 @@
 package org.achymake.recovery.listeners;
 
 import org.achymake.recovery.Recovery;
-import org.achymake.recovery.files.Database;
+import org.achymake.recovery.data.Database;
 import org.bukkit.Material;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
@@ -13,14 +13,9 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 
-public class PlayerDeath implements Listener {
-    private final Recovery plugin;
+public record PlayerDeath(Recovery plugin) implements Listener {
     private Database getDatabase() {
         return plugin.getDatabase();
-    }
-    public PlayerDeath(Recovery plugin) {
-        plugin.getServer().getPluginManager().registerEvents(this, plugin);
-        this.plugin = plugin;
     }
     @EventHandler(priority = EventPriority.NORMAL)
     public void onPlayerDeath(PlayerDeathEvent event) {

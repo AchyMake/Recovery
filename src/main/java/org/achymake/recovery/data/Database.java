@@ -1,4 +1,4 @@
-package org.achymake.recovery.files;
+package org.achymake.recovery.data;
 
 import org.achymake.recovery.Recovery;
 import org.bukkit.Location;
@@ -23,13 +23,9 @@ import java.util.Base64;
 import java.util.List;
 import java.util.logging.Level;
 
-public class Database {
-    private final Recovery plugin;
+public record Database(Recovery plugin) {
     private Message getMessage() {
         return plugin.getMessage();
-    }
-    public Database(Recovery plugin) {
-        this.plugin = plugin;
     }
     public void showParticle(Player player, Location location) {
         player.spawnParticle(Particle.CLOUD, location.add(0, 0.75, 0), 75, 0.5, 0.25, 0.5, 0);
