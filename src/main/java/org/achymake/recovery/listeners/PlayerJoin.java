@@ -13,7 +13,6 @@ public record PlayerJoin(Recovery plugin) implements Listener {
     }
     @EventHandler(priority = EventPriority.NORMAL)
     public void onPlayerJoin(PlayerJoinEvent event) {
-        if (!event.getPlayer().hasPermission("recovery.command.reload"))return;
         getUpdateChecker().getUpdate(event.getPlayer());
     }
 }

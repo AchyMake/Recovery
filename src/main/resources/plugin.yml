@@ -17,3 +17,6 @@ permissions:
   recovery.event.death:
     description: recovers items to armor stand
     default: op
+  recovery.event.join.update:
+    description: update check
+    default: op
